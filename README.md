@@ -4,6 +4,7 @@ Easy to integrate to your swift project.
 You can use direction for up/ down 
 
  textfield1.directionMaterial = direction.Down
+ 
  textfield1.directionMaterial = direction.Up
  
  You can set difference between input textfield and up/down placeholder text using following property
