@@ -12,4 +12,4 @@ You can use direction for up/ down
  
  
 
-![alt tag](https://cloud.githubusercontent.com/assets/6309880/16728519/63d4231e-4784-11e6-8c92-ebb461206d08.png)
+![alt tag](https://cloud.githubusercontent.com/assets/6309880/16729163/53808b70-4788-11e6-84be-7b83caa48a29.gif)
