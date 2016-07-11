@@ -30,13 +30,13 @@ class kTextFiledPlaceHolder: UITextField {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit ()
+        Initialize ()
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit ()
+        Initialize ()
     }
-    func commonInit(){
+    func Initialize(){
         self.clipsToBounds = false
         self.addTarget(self, action: #selector(kTextFiledPlaceHolder.textFieldDidChange), forControlEvents: .EditingChanged)
         self.EnableMaterialPlaceHolder(true)
