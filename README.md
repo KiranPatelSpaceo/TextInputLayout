@@ -13,3 +13,5 @@ You can use direction for up/ down
  
 
 ![alt tag](https://cloud.githubusercontent.com/assets/6309880/16729163/53808b70-4788-11e6-84be-7b83caa48a29.gif)
+
+We have implement this feature in many of our developed apps, look at the apps details on our company website http://www.spaceotechnologies.com
