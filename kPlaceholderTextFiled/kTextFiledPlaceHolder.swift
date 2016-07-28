@@ -8,9 +8,9 @@
 
 import UIKit
 
-enum direction: String {
-    case Up = "up"
-    case Down = "down"
+enum placeholderDirection: String {
+    case placeholderUp = "up"
+    case placeholderDown = "down"
     
 }
 class kTextFiledPlaceHolder: UITextField {
@@ -19,15 +19,8 @@ class kTextFiledPlaceHolder: UITextField {
     var lblPlaceHolder = UILabel()
     var defaultFont = UIFont()
     var difference: CGFloat = 35.0
-    var directionMaterial = direction.Up
+    var directionMaterial = placeholderDirection.placeholderUp
     var isUnderLineAvailabe : Bool = true
-    @IBInspectable var placeHolderColor: UIColor? {
-        didSet {
-            self.attributedPlaceholder = NSAttributedString(string: self.placeholder! as String ?? "",
-                                                            attributes:[NSForegroundColorAttributeName: placeHolderColor!])
-        }
-    }
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         Initialize ()
@@ -47,26 +40,25 @@ class kTextFiledPlaceHolder: UITextField {
             underLine.clipsToBounds = true
             self.addSubview(underLine)
         }
-       defaultFont = self.font!
-       
+        defaultFont = self.font!
+        
     }
-    override internal var text:String?  {
+    @IBInspectable var placeHolderColor: UIColor? = UIColor.lightGrayColor() {
         didSet {
-           // NSLog("text = \(text)")
+            self.attributedPlaceholder = NSAttributedString(string: self.placeholder! as String ?? "",
+                                                            attributes:[NSForegroundColorAttributeName: placeHolderColor!])
         }
-        willSet {
-           // NSLog("will change from \(text) to \(newValue)")
-        }
-    }//
+    }
     override internal var placeholder:String?  {
         didSet {
-          //  NSLog("text = \(text)")
+          //  NSLog("placeholder = \(placeholder)")
         }
         willSet {
             let atts  = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSFontAttributeName: UIFont.labelFontSize()]
-            self.attributedPlaceholder = NSAttributedString(string: self.placeholder! as String ?? "", attributes:atts)
+            self.attributedPlaceholder = NSAttributedString(string: newValue!, attributes:atts)
             self.EnableMaterialPlaceHolder(self.enableMaterialPlaceHolder)
         }
+
     }
     override internal var attributedText:NSAttributedString?  {
         didSet {
@@ -94,7 +86,7 @@ class kTextFiledPlaceHolder: UITextField {
                     self.lblPlaceHolder.frame = CGRectMake( self.lblPlaceHolder.frame.origin.x, 0,self.frame.size.width, self.frame.size.height)
                 }
                 else {
-                    if self.directionMaterial == direction.Up {
+                    if self.directionMaterial == placeholderDirection.placeholderUp {
                         self.lblPlaceHolder.frame = CGRectMake( self.lblPlaceHolder.frame.origin.x, -self.difference, self.frame.size.width, self.frame.size.height)
                     }else{
                         self.lblPlaceHolder.frame = CGRectMake( self.lblPlaceHolder.frame.origin.x,self.difference, self.frame.size.width, self.frame.size.height)
@@ -114,11 +106,7 @@ class kTextFiledPlaceHolder: UITextField {
         self.lblPlaceHolder.clipsToBounds = true
         self.addSubview(self.lblPlaceHolder)
         self.lblPlaceHolder.attributedText = self.attributedPlaceholder
-        self.lblPlaceHolder.sizeToFit()
-    }
-    func placeholderAttributes(placeholderAttributes: NSDictionary){
-        self.placeholderAttributes = placeholderAttributes;
-        self.placeholder(self.placeholder!)
+        //self.lblPlaceHolder.sizeToFit()
     }
     func placeholder(placeholder: NSString){
         let atts  = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSFontAttributeName: UIFont.labelFontSize()]

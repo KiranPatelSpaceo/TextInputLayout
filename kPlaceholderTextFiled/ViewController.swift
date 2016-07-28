@@ -15,9 +15,17 @@ class ViewController: UIViewController {
     @IBOutlet var textPassword: kTextFiledPlaceHolder!
       override func viewDidLoad() {
         super.viewDidLoad()
-        textName.directionMaterial = direction.Down
-        textEmail.directionMaterial = direction.Down
-        textPassword.directionMaterial = direction.Down
+        textName.directionMaterial = placeholderDirection.placeholderDown
+        textEmail.directionMaterial = placeholderDirection.placeholderDown
+        textPassword.directionMaterial = placeholderDirection.placeholderDown
+        /* ----------------Programatically ----------------------*/
+       /* let textfieldName : kTextFiledPlaceHolder = kTextFiledPlaceHolder.init(frame: CGRectMake(10, 50, self.view.frame.size.width-20, 30))
+        textfieldName.placeholder = "Name"
+        textfieldName.placeHolderColor = UIColor.darkGrayColor()
+        textfieldName.difference = 35
+        textfieldName.directionMaterial = placeholderDirection.placeholderUp
+        self.view.addSubview(textfieldName)
+ */
 
     }
 
