@@ -1,17 +1,7 @@
-# TextInputLayout
-Easy to integrate to your swift project.
+The objective of this code is to guide you to <a href="http://www.spaceotechnologies.com/create-login-screen-textinputlayout-swift-ios-app/">create login screen with TextInputLayout in iOS app</a>.
 
-You can use direction for up/ down 
+Labels tell users what information belongs in the provided form field. Usually, Labels are placed outside the form field.
 
- textfield1.directionMaterial = direction.Down
- 
- textfield1.directionMaterial = direction.Up
- 
- You can set difference between input textfield and up/down placeholder text using following property
- textfield1.difference = 35.0 // 35.0 is default value
- 
- 
+However, Placeholder text situates inside a form field, which is an additional hint, that disappear when the user types in the field. There are some forms replace field labels with in-field placeholder text to minimize clutter on the page or the form’s length. The placeholder text with form labels is the best combination to improve completion and conversion rates.
 
-![alt tag](https://cloud.githubusercontent.com/assets/6309880/16729163/53808b70-4788-11e6-84be-7b83caa48a29.gif)
-
-We have implement this feature in many of our developed apps, look at the apps details on our company website http://www.spaceotechnologies.com
+Having labels outside the form fields make important information visible at all time that makes easy for users to write the text. Hope this tutorial solves your problem, else, our <a href="http://www.spaceotechnologies.com/iphone-app-development/“>iPhone App Development</a> team would love to help you further. 
