@@ -77,8 +77,8 @@ class kTextFiledPlaceHolder: UITextField {
                 self.lblPlaceHolder.alpha = 1
                 self.attributedPlaceholder = nil
                 self.lblPlaceHolder.textColor = self.placeHolderColor
-                self.lblPlaceHolder.font = UIFont.init(name: "HelveticaNeue-italic", size: 15)
-
+                let fontSize = self.font!.pointSize;
+                self.lblPlaceHolder.font = UIFont.init(name: (self.font?.fontName)!, size: fontSize-3)
             }
             UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: .CurveEaseInOut, animations: {() -> Void in
                 if (self.text == nil) || self.text?.characters.count <= 0 {
