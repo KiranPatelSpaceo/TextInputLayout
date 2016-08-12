@@ -65,7 +65,7 @@ class kTextFiledPlaceHolder: UITextField {
           //  NSLog("text = \(text)")
         }
         willSet {
-            if (self.placeholder != nil) {
+            if (self.placeholder != nil) && (self.text != "") {
                  self.placeholder(self.placeholder!)
             }
            
