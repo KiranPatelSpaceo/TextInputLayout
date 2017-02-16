@@ -66,7 +66,7 @@ class kTextFiledPlaceHolder: UITextField {
         }
         willSet {
             if (self.placeholder != nil) && (self.text != "") {
-                 self.placeholder(self.placeholder!)
+                 self.placeholderText(self.placeholder!)
             }
            
         }
@@ -108,7 +108,7 @@ class kTextFiledPlaceHolder: UITextField {
         self.lblPlaceHolder.attributedText = self.attributedPlaceholder
         //self.lblPlaceHolder.sizeToFit()
     }
-    func placeholder(placeholder: NSString){
+    func placeholderText(placeholder: NSString){
         let atts  = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSFontAttributeName: UIFont.labelFontSize()]
         self.attributedPlaceholder = NSAttributedString(string: placeholder as String ?? "", attributes:atts)
         self.EnableMaterialPlaceHolder(self.enableMaterialPlaceHolder)
